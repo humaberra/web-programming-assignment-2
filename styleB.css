@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Tahoma, sans-serif;
+  font-size: 40px;
+}
+
+/* Sol üst köşe için kapsayıcı; pencere daralsa bile kutular alt satıra geçmesin diye nowrap */
+.container {
+  padding: 10px;
+  white-space: nowrap;
+}
+
+/* A'dan E'ye yatay dizilen kutular */
+.box {
+  display: inline-block;
+  vertical-align: top;
+  width: 100px;
+  height: 150px;
+  background-color: #eeeff2;
+  border-left: 10px dotted #D0D0FF;
+  margin-right: 10px;
+  padding: 10px; /* Harf ile kutu kenarı arasında 10px boşluk */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Üzerine gelince (hover) imleç el işareti, kutu sarı, yazı goldenrod */
+.box:hover {
+  cursor: pointer;
+  background-color: yellow;
+  color: goldenrod;
+}
+
+/* Son kutu (F): sağ alt köşeye sabitlenmiş */
+.box.final-box {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  margin-right: 0;
+}

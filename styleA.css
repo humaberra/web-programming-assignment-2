@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Tahoma, sans-serif;
+  font-size: 40px;
+}
+
+/* 6 kutuyu dikey dizecek, yatayda ortalayacak ve dikeyde eşit boşluk bırakacak flex kapsayıcı */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 20px 0;
+}
+
+/* Bütün kutuların genel boyutları ve üst çizgisi */
+.box {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0; /* Pencere küçülse bile kutular ezilip büzülmesin diye */
+  text-align: center;
+  border-top: 1px solid #687291;
+}
+
+/* Sırasıyla bir açık bir koyu renk geçişi (alternating colors) */
+.box:nth-child(odd) {
+  background-color: #dfe1e7;
+}
+
+.box:nth-child(even) {
+  background-color: #eeeff2;
+}
+
+/* Son kutu (F): rengi #687291, 4px siyah çerçeve ve metin hem dikey hem yatay tam ortalı */
+.box.final-box {
+  background-color: #687291;
+  border: 4px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
